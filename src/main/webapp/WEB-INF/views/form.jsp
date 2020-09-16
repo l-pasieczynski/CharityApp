@@ -52,7 +52,7 @@
     <div class="form--steps-container">
         <div class="form--steps-counter">Krok <span>1</span>/4</div>
 
-        <form:form method="post" modelAttribute="donation">
+        <form:form method="post" modelAttribute="donation" id="myForm">
             <!-- STEP 1: class .active is switching steps -->
             <div data-step="1" class="active">
                 <h3>Zaznacz co chcesz oddać:</h3>
@@ -124,7 +124,7 @@
                     <div class="form-section--column">
                         <h4>Adres odbioru</h4>
                         <div class="form-group form-group--inline">
-                            <label> Ulica <form:input type="text" name="address" path="street"/> </label>
+                            <label> Ulica <form:input type="text" name="address" path="street" id="street"/> </label>
                         </div>
 
                         <div class="form-group form-group--inline">
@@ -196,7 +196,7 @@
                         <div class="form-section--column">
                             <h4>Adres odbioru:</h4>
                             <ul>
-                                <li>Prosta 51</li>
+                                <li><span id="resumeSt">Prosta 51</span></li>
                                 <li>Warszawa</li>
                                 <li>99-098</li>
                                 <li>123 456 789</li>
