@@ -45,12 +45,9 @@ public class HomeController {
         if(logout != null) {
             errorMessge = "You have been successfully logged out !!";
         }
-        model.addAttribute("errorMessge", errorMessge);
+        model.addAttribute("errorMessage", errorMessge);
         return "login";
     }
-
-
-
 
     @GetMapping("logout")
     public String logout() {
@@ -72,6 +69,11 @@ public class HomeController {
         }
         userService.saveUser(user);
         return "login";
+    }
+
+    @GetMapping("/access-denied")
+    public String accessDenied(){
+        return "access-denied";
     }
 
 }

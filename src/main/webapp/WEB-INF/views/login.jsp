@@ -6,7 +6,7 @@
 <section class="login-page">
     <h2>Zaloguj się</h2>
 
-    <c:if test="${not empty errorMessge}"><div style="color:red; font-size: 18px; font-weight: bold; margin: 30px 0px;">${errorMessge}</div></c:if>
+    <c:if test="${not empty errorMessage}"><div style="color:red; font-size: 18px; font-weight: bold; margin: 30px 0px;">${errorMessage}</div></c:if>
 
     <form name="login" action="/login" method="post">
         <div class="form-group">
