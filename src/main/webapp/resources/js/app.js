@@ -1,5 +1,9 @@
 document.addEventListener("DOMContentLoaded", function () {
 
+    document.getElementById("step5").addEventListener("click", function() {
+        let street = document.getElementById("street").value;
+        document.getElementById("resumeSt").innerText = street;
+    })
     /**
      * Form Select
      */
@@ -164,6 +168,19 @@ document.addEventListener("DOMContentLoaded", function () {
             this.$stepInstructions[0].parentElement.parentElement.hidden = this.currentStep >= 5;
             this.$step.parentElement.hidden = this.currentStep >= 5;
 
+            const step = form.querySelector("form > div.active");
+            switch(this.currentStep) {
+                case 2: {
+                    // validate fields from first step
+                    const checked = step.querySelectorAll("input:checked");
+                    if (checked.length === 0) {
+                        this.currentStep--;
+                        return;
+                    }
+                    break;
+                }
+            }
+
             // TODO: get data from inputs and show them in summary
 
         }
@@ -174,12 +191,6 @@ document.addEventListener("DOMContentLoaded", function () {
     if (form !== null) {
         new FormSteps(form);
     }
-
-    $('#myForm').change(function () {
-        $('#street').keypress(function () {
-            $('#resumeSt').text($(this).val());
-        })
-    })
 
 
 });

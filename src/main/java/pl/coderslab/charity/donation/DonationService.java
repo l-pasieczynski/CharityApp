@@ -15,8 +15,8 @@ public class DonationService {
         return donationRepository.findAllBagsQuantity();
     }
 
-    public Integer donationQuantity() {
-       return donationRepository.findAllDonationCount();
+    public Long donationQuantity() {
+       return donationRepository.count();
     }
 
     public void saveDonation(Donation donation) {

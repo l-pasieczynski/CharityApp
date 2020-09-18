@@ -164,7 +164,7 @@
                 </div>
                 <div class="form-group form-group--buttons">
                     <button type="button" class="btn prev-step">Wstecz</button>
-                    <button type="button" class="btn next-step">Dalej</button>
+                    <button type="button" onclick="resume()"  class="btn next-step">Dalej</button>
                 </div>
             </div>
 
@@ -222,6 +222,13 @@
         </form:form>
     </div>
 </section>
+
+<script>
+    function resume() {
+        let street = document.getElementById("street").value;
+        document.getElementById("resumeSt").innerText = street;
+        console.log(street)}
+</script>
 
 <%@ include file="common/footer.jsp" %>
 
