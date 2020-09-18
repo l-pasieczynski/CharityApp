@@ -2,8 +2,6 @@ package pl.coderslab.charity.donation;
 
 import org.springframework.stereotype.Service;
 
-import java.util.List;
-
 @Service
 public class DonationService {
 
@@ -17,7 +15,11 @@ public class DonationService {
         return donationRepository.findAllBagsQuantity();
     }
 
-    public Integer donationQuantity() {
-       return donationRepository.findAllDonationCount();
+    public Long donationQuantity() {
+       return donationRepository.count();
+    }
+
+    public void saveDonation(Donation donation) {
+        donationRepository.save(donation);
     }
 }
