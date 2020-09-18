@@ -7,4 +7,8 @@ public interface UserService {
     void saveUser(User user);
 
     User findById(Long id);
+
+    void updateUser(User user);
+
+    void delete(Long userId);
 }
