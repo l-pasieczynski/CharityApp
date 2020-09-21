@@ -10,7 +10,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
     <title>Document</title>
 
-    <link rel="stylesheet" href="<c:url value="resources/css/style.css"/>"/>
+    <link rel="stylesheet" href="<c:url value="/resources/css/style.css"/>"/>
 </head>
 <body>
 <header class="header--main-page">
@@ -25,7 +25,7 @@
             <li><a href="#steps" class="btn btn--without-border">O co chodzi?</a></li>
             <li><a href="#about-us" class="btn btn--without-border">O nas</a></li>
             <li><a href="#help" class="btn btn--without-border">Fundacje i organizacje</a></li>
-            <li><a href="form.html" class="btn btn--without-border">Przekaż dary</a></li>
+            <li><a href="/donationForm" class="btn btn--without-border">Przekaż dary</a></li>
             <li><a href="#contact" class="btn btn--without-border">Kontakt</a></li>
         </ul>
     </nav>
