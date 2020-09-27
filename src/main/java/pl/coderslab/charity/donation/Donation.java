@@ -5,6 +5,7 @@ import lombok.Setter;
 import org.springframework.format.annotation.DateTimeFormat;
 import pl.coderslab.charity.category.Category;
 import pl.coderslab.charity.institution.Institution;
+import pl.coderslab.charity.user.User;
 
 import javax.persistence.*;
 import java.time.LocalDate;
@@ -33,6 +34,18 @@ public class Donation {
     private LocalDate pickUpDate;
     private LocalTime pickUpTime;
     private String pickUpComment;
+    @ManyToOne
+    private User user;
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
+    private LocalDate created;
+    private boolean status;
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
+    private LocalDate statusChangedDate;
+
+    @PrePersist
+    public void create() {
+        created = LocalDate.now();
+    }
 
 
     public Donation() {

@@ -11,12 +11,22 @@
         <div class="form-group">
             <form:input type="email" name="email" placeholder="Email" path="email"/>
         </div>
+        <c:if test="${not empty error}">
+            <div style="color:red; font-size: 18px; font-weight: bold; margin: 30px 0px;">${error}</div>
+        </c:if>
         <div class="form-group">
-            <form:input type="password" name="password" placeholder="Hasło" path="password"/>
+            <form:input id="password" type="password" name="password" placeholder="Hasło" path="password"
+                        onkeyup='check();'/>
         </div>
         <div class="form-group">
-<%--            <form:input type="password" name="password2" placeholder="Powtórz hasło" path="password2" />--%>
+            <form:input id="retypePassword" type="password" name="password2" placeholder="Powtórz hasło"
+                        path="retypePassword" onkeyup='check();'/>
+            <span id='message'></span>
         </div>
+        <c:if test="${not empty errorPass}">
+            <div style="color:red; font-size: 18px; font-weight: bold; margin: 30px 0px;">${errorPass}</div>
+        </c:if>
+
 
         <div class="form-group form-group--buttons">
             <a href="/login" class="btn btn--without-border">Zaloguj się</a>
@@ -26,3 +36,5 @@
 </section>
 
 <%@ include file="common/footer.jsp" %>
+
+<script src="<c:url value="/resources/js/register.js"/>"></script>
