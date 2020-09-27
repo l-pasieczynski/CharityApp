@@ -1,9 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
 
-    document.getElementById("step5").addEventListener("click", function() {
-        let street = document.getElementById("street").value;
-        document.getElementById("resumeSt").innerText = street;
-    })
     /**
      * Form Select
      */
@@ -168,20 +164,50 @@ document.addEventListener("DOMContentLoaded", function () {
             this.$stepInstructions[0].parentElement.parentElement.hidden = this.currentStep >= 5;
             this.$step.parentElement.hidden = this.currentStep >= 5;
 
-            const step = form.querySelector("form > div.active");
-            switch(this.currentStep) {
-                case 2: {
-                    // validate fields from first step
-                    const checked = step.querySelectorAll("input:checked");
-                    if (checked.length === 0) {
-                        this.currentStep--;
-                        return;
-                    }
-                    break;
-                }
-            }
+            // const step = form.querySelector("form > div.active");
+            // switch(this.currentStep) {
+            //     case 2: {
+            //         // validate fields from first step
+            //         const checked = step.querySelectorAll("input:checked");
+            //         if (checked.length === 0) {
+            //             this.currentStep--;
+            //             return;
+            //         }
+            //         break;
+            //     }
+            // }
 
             // TODO: get data from inputs and show them in summary
+
+            let category = document.getElementById("category").value;
+            document.getElementById("resultCategory").innerText = category;
+
+            let quantity = document.getElementById("quantity").value;
+            document.getElementById("resultQuantity").innerText = quantity;
+
+            let institution = document.getElementById("institution").value;
+            document.getElementById("resultInstitution").innerText = institution;
+
+            let street = document.getElementById("street").value;
+            document.getElementById("resultStreet").innerText = street;
+
+            let city = document.getElementById("city").value;
+            document.getElementById("resultCity").innerText = city;
+
+            let postcode = document.getElementById("postcode").value;
+            document.getElementById("resultPostCode").innerText = postcode;
+
+            let phone = document.getElementById("phone").value;
+            document.getElementById("resultPhone").innerText = phone;
+
+            let pickUpDate = document.getElementById("pickUpDate").value;
+            document.getElementById("resultPickUpDate").innerText = pickUpDate;
+
+            let pickUpTime = document.getElementById("pickUpTime").value;
+            document.getElementById("resultPickUpTime").innerText = pickUpTime;
+
+            let pickUpComment = document.getElementById("pickUpComment").value;
+            document.getElementById("resultPickUpComment").innerText = pickUpComment;
 
         }
 

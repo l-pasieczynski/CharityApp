@@ -38,14 +38,14 @@ public class HomeController {
     public String loginPage(@RequestParam(value = "error", required = false) String error,
                             @RequestParam(value = "logout", required = false) String logout,
                             Model model) {
-        String errorMessge = null;
+        String errorMessage = null;
         if(error != null) {
-            errorMessge = "Username or Password is incorrect !!";
+            errorMessage = "Username or Password is incorrect !!";
         }
         if(logout != null) {
-            errorMessge = "You have been successfully logged out !!";
+            errorMessage = "You have been successfully logged out !!";
         }
-        model.addAttribute("errorMessage", errorMessge);
+        model.addAttribute("errorMessage", errorMessage);
         return "login";
     }
 
@@ -53,7 +53,7 @@ public class HomeController {
     public String logout() {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         authentication.setAuthenticated(false);
-        return "redirect:/";
+        return "login";
     }
 
     @GetMapping("/register")
@@ -63,8 +63,15 @@ public class HomeController {
     }
 
     @PostMapping("/register")
-    public String registerPost(@ModelAttribute("user") @Valid User user, BindingResult bindingResult){
+    public String registerPost(@ModelAttribute("user") @Valid User user, BindingResult bindingResult, Model model){
+        String errorMessage = null;
         if (bindingResult.hasErrors()){
+            errorMessage = "Nie poprawny email lub nazwa użytkownika";
+            model.addAttribute("error", errorMessage);
+            return "register";
+        } if(!user.getPassword().equals(user.getRetypePassword())){
+            errorMessage = "Hasła nie są identyczne";
+            model.addAttribute("errorPass", errorMessage);
             return "register";
         }
         userService.saveUser(user);

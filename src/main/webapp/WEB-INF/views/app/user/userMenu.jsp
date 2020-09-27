@@ -30,19 +30,19 @@
 
     <!-- Nav Item - Pages Collapse Menu -->
     <li class="nav-item">
-        <a class="nav-link collapsed" href="#" aria-expanded="true" aria-controls="collapseTwo">
+        <a class="nav-link collapsed" href="<c:url value="/app/institution"/>" aria-expanded="true" aria-controls="collapseTwo">
             <i class="fas fa-fw fa-cog"></i>
             <span>Lista Fundacji</span>
         </a>
     </li>
     <li class="nav-item">
-        <a class="nav-link collapsed" href="<c:url value="/app/user"/>" aria-expanded="true" aria-controls="collapseTwo">
+        <a class="nav-link collapsed" href="<c:url value="/app/user/donation"/>" aria-expanded="true" aria-controls="collapseTwo">
             <i class="fas fa-fw fa-cog"></i>
             <span>Twoje Dary</span>
         </a>
     </li>
     <li class="nav-item">
-        <a class="nav-link collapsed" href="<c:url value="/app/user"/>" aria-expanded="true" aria-controls="collapseTwo">
+        <a class="nav-link collapsed" href="<c:url value="/#contact"/>" aria-expanded="true" aria-controls="collapseTwo">
             <i class="fas fa-fw fa-cog"></i>
             <span>Kontakt</span>
         </a>
