@@ -60,15 +60,15 @@
                 <c:forEach var="categories" items="${category}" varStatus="stat">
                     <div class="form-group form-group--checkbox">
                         <label>
-                            <form:checkbox path="category" value="${categories.id}"/>
+                            <form:checkbox id="categoryCheckbox" name="categories" path="category" value="${categories.id}"/>
                             <span class="checkbox"></span>
-                            <span class="description"><span id="category">${categories.name}</span>
+                            <span class="description">${categories.name}</span>
                         </label>
                     </div>
                 </c:forEach>
 
                 <div class="form-group form-group--buttons">
-                    <button type="button" class="btn next-step">Dalej</button>
+                    <button id="btn-1" type="button" class="btn next-step">Dalej</button>
                 </div>
             </div>
 
@@ -85,7 +85,7 @@
 
                 <div class="form-group form-group--buttons">
                     <button type="button" class="btn prev-step">Wstecz</button>
-                    <button type="button" class="btn next-step">Dalej</button>
+                    <button id="btn-2"  type="button" class="btn next-step">Dalej</button>
                 </div>
             </div>
 
@@ -97,7 +97,7 @@
                 <c:forEach var="institution" items="${institution}" varStatus="stat">
                 <div class="form-group form-group--checkbox">
                     <label>
-                        <form:radiobutton path="institution" value="${institution.id}"/>
+                        <form:radiobutton path="institution" value="${institution.id}" id="foundationRadio"/>
                         <span class="checkbox radio"></span>
                         <span class="description">
                             <div class="title">Fundacja <span id="institution">“${institution.name}”</span></div>
@@ -111,7 +111,7 @@
 
                 <div class="form-group form-group--buttons">
                     <button type="button" class="btn prev-step">Wstecz</button>
-                    <button type="button" class="btn next-step">Dalej</button>
+                    <button id="btn-3" type="button" class="btn next-step">Dalej</button>
                 </div>
             </div>
 
@@ -163,7 +163,7 @@
                 </div>
                 <div class="form-group form-group--buttons">
                     <button type="button" class="btn prev-step">Wstecz</button>
-                    <button type="button" class="btn next-step">Dalej</button>
+                    <button id="btn-4" type="button" class="btn next-step">Dalej</button>
                 </div>
             </div>
 
@@ -177,7 +177,7 @@
                         <ul>
                             <li>
                                 <span class="icon icon-bag"></span>
-                                <span class="summary--text"><span id="resultQuantity"></span> worki <span id="resultCategory">ubrań w dobrym stanie dla dzieci</span></span>
+                                <span class="summary--text"><span id="resultCategory">ubrań w dobrym stanie dla dzieci</span></span>
                             </li>
 
                             <li>

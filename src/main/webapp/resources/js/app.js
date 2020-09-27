@@ -179,14 +179,20 @@ document.addEventListener("DOMContentLoaded", function () {
 
             // TODO: get data from inputs and show them in summary
 
-            let category = document.getElementById("category").value;
-            document.getElementById("resultCategory").innerText = category;
+            let checkboxCategory = $('input[name=category]:checked');
+            let categoryResult=$('#resultCategory');
+            let categoryValue = [];
 
-            let quantity = document.getElementById("quantity").value;
-            document.getElementById("resultQuantity").innerText = quantity;
+            checkboxCategory.each(function (index, element) {
+                categoryValue.push($(element).siblings('span').text())
+            })
+            categoryResult.text($('#quantity').val() + " worki " +categoryValue);
 
-            let institution = document.getElementById("institution").value;
-            document.getElementById("resultInstitution").innerText = institution;
+
+            let radioFoundation =$('input[name=institution]:checked');
+            let institution = $('#resultInstitution')
+            institution.text(radioFoundation.siblings('span').children('.title').text());
+
 
             let street = document.getElementById("street").value;
             document.getElementById("resultStreet").innerText = street;
