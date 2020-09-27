@@ -80,6 +80,10 @@
                                                     <button><a
                                                             href="/app/admin/user/delete/${user.id}">Usuń</a>
                                                     </button>
+                                                    <button>
+                                                        <a
+                                                                href="/app/admin/user/mail/${user.id}">Email</a>
+                                                    </button>
                                                 </form:form>
                                             </td>
                                     </tr>
