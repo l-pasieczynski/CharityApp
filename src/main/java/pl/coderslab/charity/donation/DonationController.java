@@ -1,11 +1,12 @@
 package pl.coderslab.charity.donation;
 
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import pl.coderslab.charity.category.CategoryService;
 import pl.coderslab.charity.institution.InstitutionService;
-import pl.coderslab.charity.user.User;
+import pl.coderslab.charity.user.CurrentUser;
 import pl.coderslab.charity.user.UserService;
 
 import java.security.Principal;
@@ -35,14 +36,12 @@ public class DonationController {
     }
 
     @PostMapping("donationForm")
-    public String makeDonationPost(@ModelAttribute Donation donation, Principal principal) {
-
+    public String makeDonationPost(@ModelAttribute Donation donation, @AuthenticationPrincipal CurrentUser principal) {
         if (principal != null) {
-            User user = userService.findByUsername(principal.getName());
-            donation.setUser(user);
+            donation.setUser(principal.getUser());
         }
         donationService.saveDonation(donation);
-        return "app/common/confirm";
+        return "redirect:/confirm";
     }
 
     @GetMapping("confirm")
