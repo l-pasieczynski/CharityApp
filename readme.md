@@ -1,12 +1,54 @@
-<img alt="Logo" src="http://coderslab.pl/svg/logo-coderslab.svg" width="400">
+# Charity App
+The goal of the project is to create a place where everyone can donate unnecessary things to trusted institutions.
+
+## Table of contents
+* [General info](#general-info)
+* [Screenshots](#screenshots)
+* [Technologies](#technologies)
+* [Setup](#setup)
+* [Features](#features)
+* [Status](#status)
+
+## General info
+The user has things at home that he or she does not use, but they are in good condition and want to give them to people who may need
+
+## Screenshots
+COMING SOON
+
+## Technologies
+* Java
+* Spring Boot
+* Spring Security
+* Spring Mail
+* Spring JPA (Hibernate)
+* JSP
+* JUnit
+
+## Setup
+* Clone this repo in local machine
+* Start app in IDE, browser should open automaticly on landing page
 
 
-Przed przystąpieniem do pracy  przeczytaj poniższe wskazówki.
-## Jak zacząć?
+Prerequisites
+* Java 8 or above
+* Maven
+* IDE IntelliJ
 
-1. Zaimportuj projekt jako projekt `Maven`, wg poniższych wskazówek:
+## Features
+* registration
+* logging in
+* manage institution 
+* the possibility of donating to a selected institution
+* list of all user donation
+* confirmation donation pick-up 
+* list of all donation for admin 
+* users managment 
+* admin managment + validation (last admin couldn't be deleted) 
 
-	* W `IntelliJ` wybieramy: `File –> New –> Project from Existing Sources...`
-	* Wskazujemy lokalizację katalogu ze sklonowanym projektem i zatwierdzamy.
-	* Następnie w nowym oknie wybieramy: `Import project from external model` i wskazujemy `Maven`
-	* Wybieramy kolejno opcje: `Next –> Next –> Next –> Finish`
+
+## Status
+Project still in development </br>
+TO DO: 
+* adding VerificationToken for registering and forgotten password
+* addding JUnit tests
+* deployment to heroku
