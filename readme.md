@@ -47,8 +47,4 @@ Prerequisites
 
 
 ## Status
-Project still in development </br>
-TO DO: 
-* adding VerificationToken for registering and forgotten password
-* addding JUnit tests
-* deployment to heroku
+Project completed </br>
